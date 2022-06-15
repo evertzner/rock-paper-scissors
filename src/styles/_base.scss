@@ -1,0 +1,62 @@
+@import "variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-image: $background-color;
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  color: $color-white;
+
+  // @media only screen and (max-width: $bp-mobile) {
+  //   font-size: 14px;
+  // }
+}
+
+p {
+  font-size: 15px;
+  padding-top: 3px;
+
+  // @media only screen and (max-width: $bp-mobile) {
+  //   font-size: 14px;
+  // }
+}
+
+span {
+  line-height: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
