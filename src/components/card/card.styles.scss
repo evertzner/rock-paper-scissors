@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.card-container {
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1/1;
+  background-color: $color-white;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__figure {
+    height: 40%;
+  }
+
+  &[data-option="paper"] {
+    background-image: $color-paper-gradient;
+  }
+
+  &[data-option="rock"] {
+    background-image: $color-rock-gradient;
+  }
+
+  &[data-option="scissors"] {
+    background-image: $color-scissors-gradient;
+  }
+}

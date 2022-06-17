@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.rules {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 14px;
+  border: 1px solid $color-white;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s linear;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 5px 0.1px $color-white;
+  }
+}

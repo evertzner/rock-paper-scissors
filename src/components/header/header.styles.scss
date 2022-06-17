@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.header-container {
+  display: grid;
+  grid-template-columns: 3fr minmax(8rem, 9rem);
+  padding: 1.2rem 1.3rem;
+  border: 3px solid $header-outline;
+  border-radius: 15px;
+  width: min(45rem, 98%);
+
+  &__logo {
+    margin: 6px 10px;
+  }
+
+  &__score {
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    border-radius: 10px;
+    user-select: none;
+
+    &--text {
+      color: $score-text;
+      letter-spacing: 2px;
+    }
+
+    &--number {
+      color: $dark-text;
+      font-size: 60px;
+    }
+  }
+}
