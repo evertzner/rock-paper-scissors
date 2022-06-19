@@ -1,9 +1,7 @@
 @import "../../styles/variables";
 
 .rules {
-  position: absolute;
-  bottom: 3%;
-  right: 3%;
+  align-self: end;
   font-weight: 600;
   letter-spacing: 3px;
   font-size: 14px;
@@ -12,6 +10,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.1s linear;
+  margin-right: 1rem;
 
   &:hover {
     transform: scale(1.01);

@@ -1,0 +1,67 @@
+@import "../../styles/variables";
+
+.card-selection-container {
+  position: relative;
+  width: min(45rem, 98%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 3fr;
+  align-items: center;
+  height: 60%;
+
+  & > * {
+    justify-self: center;
+  }
+
+  p {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .player-text {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .player-card {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .player-card,
+  .opponent-card {
+    & > * {
+      cursor: default;
+    }
+  }
+
+  .opponent-text {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .opponent-card,
+  .opponent-card-skeleton {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    animation: opponentAppear 300ms ease-in;
+  }
+
+  .opponent-card-skeleton {
+    background-color: $background-color-skeleton;
+    width: 60%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+  }
+}
+
+@keyframes opponentAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

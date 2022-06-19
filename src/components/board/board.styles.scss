@@ -1,5 +1,6 @@
-.board {
+.board__selection {
   position: relative;
+  max-width: 90vw;
 
   & > figure {
     max-width: 50vw;

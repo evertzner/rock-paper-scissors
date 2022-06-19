@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  user-select: none;
 }
 
 html {
@@ -15,6 +16,8 @@ html {
 body {
   margin: 0;
   background-image: $background-color;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

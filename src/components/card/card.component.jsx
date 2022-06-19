@@ -4,7 +4,7 @@ import { ReactComponent as Rock } from "../../assets/icon-rock.svg";
 
 import "./card.styles.scss";
 
-const Card = ({ customClass, option }) => {
+const Card = ({ customClass, option, onClick }) => {
   const renderSwitch = (option) => {
     switch (option) {
       case "paper":
@@ -17,9 +17,25 @@ const Card = ({ customClass, option }) => {
         return <></>;
     }
   };
+
+  const onSelectCard = () => {
+    onClick(option);
+  };
+
   return (
-    <div className={`card-container ${customClass}`} data-option={option}>
-      <figure className="card-container__figure">{renderSwitch(option)}</figure>
+    <div
+      className={
+        customClass ? `card-container ${customClass}` : "card-container"
+      }
+      onClick={onSelectCard}
+    >
+      <div className="outer-circle" data-option={option}>
+        <div className="inner-circle">
+          <figure className="card-container__figure">
+            {renderSwitch(option)}
+          </figure>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,19 +1,47 @@
+import { useState } from "react";
 import Card from "../card/card.component";
+import CardSelection from "../card-selection/card-selection.component";
 
 import { ReactComponent as Triangle } from "../../assets/bg-triangle.svg";
 
 import "./board.styles.scss";
 
 const Board = () => {
+  const [selectedCard, setSelectedCard] = useState("");
+
+  const onSelectCardHandler = (option) => {
+    setSelectedCard(option);
+  };
+
   return (
-    <div className="board">
-      <figure>
-        <Triangle className="board__triangle" />
-      </figure>
-      <Card customClass="board__paper" option="paper" />
-      <Card customClass="board__scissors" option="scissors" />
-      <Card customClass="board__rock" option="rock" />
-    </div>
+    <>
+      {selectedCard !== "" ? (
+        <CardSelection selectedCard={selectedCard} />
+      ) : (
+        <>
+          <div className="board__selection">
+            <figure>
+              <Triangle className="board__selection__triangle" />
+            </figure>
+            <Card
+              customClass="board__selection__paper"
+              option="paper"
+              onClick={onSelectCardHandler}
+            />
+            <Card
+              customClass="board__selection__scissors"
+              option="scissors"
+              onClick={onSelectCardHandler}
+            />
+            <Card
+              customClass="board__selection__rock"
+              option="rock"
+              onClick={onSelectCardHandler}
+            />
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
