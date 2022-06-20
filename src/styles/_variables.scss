@@ -50,6 +50,7 @@ $score-text: hsl(229, 64%, 46%);
 $header-outline: hsl(217, 16%, 45%);
 $color-white: hsl(0, 0%, 100%);
 $color-white-shadow: hsl(0, 0%, 83%);
+$color-button-play-again: hsl(349, 65%, 46%);
 
 // Background
 
@@ -59,19 +60,15 @@ $background-color: radial-gradient(
   hsl(237, 49%, 15%)
 );
 
-// $background-color-skeleton: linear-gradient(
-//   to bottom,
-//   hsl(214, 47%, 23%),
-//   hsl(237, 49%, 15%)
-// );
+$background-color-skeleton: hsl(222, 45%, 18%);
 
-$background-color-skeleton: hsl(222deg 45% 18%);
+$color-pulse: hsl(214, 46%, 29%);
 
 // RESPONSIVE BREAKPOINTS
 $bp-mobile: 375px;
+$bp-small: 615px;
+$bp-medium: 850px;
 $bp-desktop: 1366px;
-// $bp-small: 620px;
-// $bp-medium: 720px;
 
 // Font
 $font-family: "Barlow Semi Condensed", sans-serif;

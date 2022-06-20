@@ -13,10 +13,17 @@ const Board = () => {
     setSelectedCard(option);
   };
 
+  const onPlayAgainHandler = () => {
+    setSelectedCard("");
+  };
+
   return (
     <>
       {selectedCard !== "" ? (
-        <CardSelection selectedCard={selectedCard} />
+        <CardSelection
+          selectedCard={selectedCard}
+          onClick={onPlayAgainHandler}
+        />
       ) : (
         <>
           <div className="board__selection">
