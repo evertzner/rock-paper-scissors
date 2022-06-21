@@ -46,6 +46,14 @@
       background-image: $color-scissors-gradient;
     }
 
+    &[data-option="spock"] {
+      background-image: $color-spock-gradient;
+    }
+
+    &[data-option="lizard"] {
+      background-image: $color-lizard-gradient;
+    }
+
     &[data-option="paper"]::before {
       background-color: $color-paper-shadow;
     }
@@ -56,6 +64,14 @@
 
     &[data-option="scissors"]::before {
       background-color: $color-scissors-shadow;
+    }
+
+    &[data-option="spock"]::before {
+      background-color: $color-spock-shadow;
+    }
+
+    &[data-option="lizard"]::before {
+      background-color: $color-lizard-shadow;
     }
   }
 

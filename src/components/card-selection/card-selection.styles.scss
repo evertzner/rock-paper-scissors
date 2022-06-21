@@ -23,7 +23,7 @@
   }
 
   p {
-    font-size: 2rem;
+    font-size: 1.8rem;
     letter-spacing: 3px;
     text-align: center;
     transition: font-size 200ms linear;
@@ -92,7 +92,7 @@
 
 .played {
   width: min(68rem, 98%);
-  grid-template-columns: 1fr 0.75fr 1fr;
+  grid-template-columns: 1fr 0.7fr 1fr;
 
   .opponent-text {
     grid-column: 3/4;

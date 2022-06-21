@@ -1,6 +1,8 @@
 import { ReactComponent as Paper } from "../../assets/icon-paper.svg";
 import { ReactComponent as Scissors } from "../../assets/icon-scissors.svg";
 import { ReactComponent as Rock } from "../../assets/icon-rock.svg";
+import { ReactComponent as Spock } from "../../assets/icon-spock.svg";
+import { ReactComponent as Lizard } from "../../assets/icon-lizard.svg";
 
 import "./card.styles.scss";
 
@@ -13,6 +15,10 @@ const Card = ({ customClass, option, onClick }) => {
         return <Scissors />;
       case "rock":
         return <Rock />;
+      case "spock":
+        return <Spock />;
+      case "lizard":
+        return <Lizard />;
       default:
         return <></>;
     }

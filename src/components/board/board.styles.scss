@@ -5,11 +5,9 @@
   & > figure {
     max-width: 50vw;
   }
+}
 
-  &__triangle {
-    background-size: 10% 10%;
-  }
-
+.original {
   &__paper {
     top: 0;
     left: 0;
@@ -25,6 +23,46 @@
   &__rock {
     bottom: 10%;
     left: 50%;
+    transform: translate(-50%, 50%);
+  }
+}
+
+.bonus {
+  &__paper,
+  &__scissors,
+  &__rock,
+  &__spock,
+  &__lizard {
+    width: 45%;
+  }
+
+  &__paper {
+    top: 40%;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &__scissors {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__rock {
+    bottom: 0;
+    right: 20%;
+    transform: translate(50%, 50%);
+  }
+
+  &__spock {
+    top: 40%;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &__lizard {
+    bottom: 0;
+    left: 20%;
     transform: translate(-50%, 50%);
   }
 }

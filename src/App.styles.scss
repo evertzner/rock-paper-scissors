@@ -8,4 +8,15 @@
   padding: 3rem 0;
   height: 100vh;
   overflow: hidden;
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .one-child {
+    justify-content: end;
+  }
 }

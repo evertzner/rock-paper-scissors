@@ -1,7 +1,15 @@
 import "./rules.styles.scss";
 
-const Rules = () => {
-  return <div className="rules">RULES</div>;
+const Rules = ({ onClick }) => {
+  const onRulesDialog = () => {
+    onClick();
+  };
+
+  return (
+    <div className="btn-outline" onClick={onRulesDialog}>
+      RULES
+    </div>
+  );
 };
 
 export default Rules;

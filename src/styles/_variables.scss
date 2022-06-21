@@ -36,12 +36,16 @@ $color-lizard-gradient: linear-gradient(
   hsl(261, 73%, 60%)
 );
 
+$color-lizard-shadow: hsl(261, 55%, 51%);
+
 // Spock Gradient
 $color-spock-gradient: linear-gradient(
   to bottom,
   hsl(189, 58%, 57%),
   hsl(189, 59%, 53%)
 );
+
+$color-spock-shadow: hsl(189, 63%, 44%);
 
 // Neutral
 
@@ -51,6 +55,7 @@ $header-outline: hsl(217, 16%, 45%);
 $color-white: hsl(0, 0%, 100%);
 $color-white-shadow: hsl(0, 0%, 83%);
 $color-button-play-again: hsl(349, 65%, 46%);
+$color-modal-backdrop: rgba(0, 0, 0, 0.7);
 
 // Background
 
@@ -66,6 +71,7 @@ $color-pulse: hsl(214, 46%, 29%);
 
 // RESPONSIVE BREAKPOINTS
 $bp-mobile: 375px;
+$bp-xsmall: 425px;
 $bp-small: 615px;
 $bp-medium: 850px;
 $bp-desktop: 1366px;
