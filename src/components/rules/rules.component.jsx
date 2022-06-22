@@ -6,7 +6,7 @@ const Rules = ({ onClick }) => {
   };
 
   return (
-    <div className="btn-outline" onClick={onRulesDialog}>
+    <div className="btn-outline rules" onClick={onRulesDialog}>
       RULES
     </div>
   );

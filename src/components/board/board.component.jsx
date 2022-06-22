@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Card from "../card/card.component";
 import CardSelection from "../card-selection/card-selection.component";
 
@@ -6,6 +5,9 @@ import { ReactComponent as Triangle } from "../../assets/bg-triangle.svg";
 import { ReactComponent as Pentagon } from "../../assets/bg-pentagon.svg";
 
 import "./board.styles.scss";
+
+const originalPlayMode = ["rock", "paper", "scissors"];
+const bonusPlayMode = ["rock", "paper", "scissors", "spock", "lizard"];
 
 const Board = ({ playMode, selectedCard, onSelectCard }) => {
   const onSelectCardHandler = (option) => {
@@ -32,52 +34,28 @@ const Board = ({ playMode, selectedCard, onSelectCard }) => {
                 <figure>
                   <Triangle />
                 </figure>
-                <Card
-                  customClass={`${playMode}__paper`}
-                  option="paper"
-                  onClick={onSelectCardHandler}
-                />
-                <Card
-                  customClass={`${playMode}__scissors`}
-                  option="scissors"
-                  onClick={onSelectCardHandler}
-                />
-                <Card
-                  customClass={`${playMode}__rock`}
-                  option="rock"
-                  onClick={onSelectCardHandler}
-                />
+                {originalPlayMode.map((item) => (
+                  <Card
+                    key={item}
+                    customClass={`${playMode}__${item}`}
+                    option={item}
+                    onClick={onSelectCardHandler}
+                  />
+                ))}
               </>
             ) : (
               <>
                 <figure>
                   <Pentagon />
                 </figure>
-                <Card
-                  customClass={`${playMode}__spock`}
-                  option="spock"
-                  onClick={onSelectCardHandler}
-                />
-                <Card
-                  customClass={`${playMode}__scissors`}
-                  option="scissors"
-                  onClick={onSelectCardHandler}
-                />
-                <Card
-                  customClass={`${playMode}__paper`}
-                  option="paper"
-                  onClick={onSelectCardHandler}
-                />
-                <Card
-                  customClass={`${playMode}__rock`}
-                  option="rock"
-                  onClick={onSelectCardHandler}
-                />
-                <Card
-                  customClass={`${playMode}__lizard`}
-                  option="lizard"
-                  onClick={onSelectCardHandler}
-                />
+                {bonusPlayMode.map((item) => (
+                  <Card
+                    key={item}
+                    customClass={`${playMode}__${item}`}
+                    option={item}
+                    onClick={onSelectCardHandler}
+                  />
+                ))}
               </>
             )}
           </div>

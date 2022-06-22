@@ -1,23 +1,27 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
+import { gameValuesActions } from "../../store/game-values-slice";
 import Card from "../card/card.component";
 
 import "./card-selection.styles.scss";
 
+const options = ["paper", "rock", "scissors", "spock", "lizard"];
+const movements = [
+  { play1: "paper", play2: "scissors", winner: "scissors" },
+  { play1: "rock", play2: "scissors", winner: "rock" },
+  { play1: "paper", play2: "rock", winner: "paper" },
+  { play1: "rock", play2: "lizard", winner: "rock" },
+  { play1: "lizard", play2: "spock", winner: "lizard" },
+  { play1: "spock", play2: "scissors", winner: "spock" },
+  { play1: "lizard", play2: "paper", winner: "lizard" },
+  { play1: "spock", play2: "rock", winner: "spock" },
+  { play1: "scissors", play2: "lizard", winner: "scissors" },
+  { play1: "paper", play2: "spock", winner: "paper" },
+];
+
 const CardSelection = ({ selectedCard, playMode, onClick }) => {
-  const options = ["paper", "rock", "scissors"];
-  const movements = [
-    { play1: "paper", play2: "scissors", winner: "scissors" },
-    { play1: "rock", play2: "scissors", winner: "rock" },
-    { play1: "paper", play2: "rock", winner: "paper" },
-    { play1: "rock", play2: "lizard", winner: "rock" },
-    { play1: "lizard", play2: "spock", winner: "lizard" },
-    { play1: "spock", play2: "scissors", winner: "spock" },
-    { play1: "lizard", play2: "paper", winner: "lizard" },
-    { play1: "spock", play2: "rock", winner: "spock" },
-    { play1: "scissors", play2: "lizard", winner: "scissors" },
-    { play1: "paper", play2: "spock", winner: "paper" },
-  ];
+  const dispatch = useDispatch();
 
   const [opponent, setOpponent] = useState("");
   const [result, setResult] = useState("");
@@ -51,6 +55,7 @@ const CardSelection = ({ selectedCard, playMode, onClick }) => {
     if (result !== "draw") {
       if (selectedCard === result[0]) {
         setWhowins("player");
+        dispatch(gameValuesActions.win());
       }
       if (opponent === result[0]) {
         setWhowins("cpu");
@@ -75,7 +80,8 @@ const CardSelection = ({ selectedCard, playMode, onClick }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      const rndInt = Math.floor(Math.random() * 3) + 1;
+      const numberOfOptions = playMode === "original" ? 3 : 5;
+      const rndInt = Math.floor(Math.random() * numberOfOptions) + 1;
       setOpponent(options[rndInt - 1]);
     }, 1000);
   }, []);

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Modal from "./components/modal/modal.component";
+import { useSelector } from "react-redux/es/exports";
 
+import Modal from "./components/modal/modal.component";
 import Header from "./components/header/header.component";
 import Board from "./components/board/board.component";
 import Rules from "./components/rules/rules.component";
@@ -15,6 +16,7 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [playMode, setPlayMode] = useState("original");
   const [selectedCard, setSelectedCard] = useState("");
+  const score = useSelector((state) => state.gamevalues.score);
 
   const selectCardHandle = (option) => {
     setSelectedCard(option);
@@ -31,7 +33,7 @@ const App = () => {
   return (
     <>
       <div className="app">
-        <Header playMode={playMode} score={13} />
+        <Header playMode={playMode} score={score} />
         <Board
           playMode={playMode}
           selectedCard={selectedCard}

@@ -5,7 +5,7 @@ const PlayMode = ({ playMode, onClick }) => {
     onClick();
   };
   return (
-    <div className="btn-outline" onClick={onPlayMode}>{`play ${
+    <div className="btn-outline play-mode" onClick={onPlayMode}>{`play ${
       playMode === "original" ? "bonus" : "original"
     } mode`}</div>
   );
