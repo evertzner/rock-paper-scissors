@@ -17,6 +17,10 @@
     font-size: 10px;
   }
 
+  @media only screen and (max-width: $bp-mobile) {
+    font-size: 15px;
+  }
+
   &:hover {
     box-shadow: 0 0 5px 0.1px $color-white;
   }

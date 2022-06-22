@@ -55,7 +55,9 @@ const CardSelection = ({ selectedCard, playMode, onClick }) => {
     if (result !== "draw") {
       if (selectedCard === result[0]) {
         setWhowins("player");
-        dispatch(gameValuesActions.win());
+        setTimeout(() => {
+          dispatch(gameValuesActions.win());
+        }, 700);
       }
       if (opponent === result[0]) {
         setWhowins("cpu");

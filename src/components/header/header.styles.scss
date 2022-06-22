@@ -2,11 +2,26 @@
 
 .header-container {
   display: grid;
-  grid-template-columns: 3fr minmax(8rem, 9rem);
+  grid-template-columns: 3fr max-content;
+  grid-template-rows: 6rem;
   padding: 1.2rem 1.3rem;
   border: 3px solid $header-outline;
   border-radius: 15px;
-  width: min(45rem, 98%);
+  width: min(45rem, 90%);
+  margin-top: 1rem;
+
+  @media only screen and(max-width: $bp-mobile) {
+    grid-template-columns: 3fr max-content;
+    grid-template-rows: 5rem;
+    border-radius: 7px;
+    padding: 0.7rem 0.8rem;
+    margin-top: 1rem;
+    max-width: 90%;
+  }
+
+  & > figure {
+    justify-self: start;
+  }
 
   &__score {
     background-color: $color-white;
@@ -16,15 +31,31 @@
     justify-content: center;
     font-weight: 700;
     border-radius: 10px;
+    padding: 2rem;
+
+    @media only screen and(max-width: $bp-mobile) {
+      border-radius: 5px;
+      padding: 1.5rem;
+    }
 
     &--text {
       color: $score-text;
       letter-spacing: 2px;
+
+      @media only screen and(max-width: $bp-mobile) {
+        letter-spacing: 1px;
+        font-size: 12px;
+      }
     }
 
     &--number {
       color: $dark-text;
       font-size: 60px;
+      line-height: 1;
+
+      @media only screen and(max-width: $bp-mobile) {
+        font-size: 45px;
+      }
     }
   }
 }
