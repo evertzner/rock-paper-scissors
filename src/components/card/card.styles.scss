@@ -1,8 +1,9 @@
 @import "../../styles/variables";
 
 .card-container {
-  position: absolute;
+  position: relative;
   width: 70%;
+  isolation: isolate;
 
   .outer-circle {
     width: 100%;

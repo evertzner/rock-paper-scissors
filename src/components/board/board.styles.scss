@@ -1,6 +1,7 @@
 .board__selection {
   position: relative;
   max-width: 90vw;
+  aspect-ratio: 1/1;
 
   & > figure {
     max-width: 50vw;
@@ -8,61 +9,80 @@
 }
 
 .original {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  .triangle {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+  }
+
+  &__paper,
+  &__scissors,
+  &__rock {
+    justify-self: center;
+    align-self: center;
+  }
+
   &__paper {
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
   }
 
   &__scissors {
-    top: 0;
-    right: 0;
-    transform: translate(50%, -50%);
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
   }
 
   &__rock {
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    grid-column: 2 / 4;
+    grid-row: 3 / 5;
   }
 }
 
 .bonus {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+
+  .pentagon {
+    grid-column: 3 / 11;
+    grid-row: 3 / 8;
+    justify-self: center;
+  }
+
   &__paper,
   &__scissors,
   &__rock,
   &__spock,
   &__lizard {
-    width: 45%;
+    justify-self: center;
+    align-self: center;
   }
 
   &__paper {
-    top: 40%;
-    right: 0;
-    transform: translate(50%, -50%);
+    grid-column: 8 / 12;
+    grid-row: 3 / 7;
   }
 
   &__scissors {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    grid-column: 5 / 9;
+    grid-row: 1 / 5;
   }
 
   &__rock {
-    bottom: 0;
-    right: 20%;
-    transform: translate(50%, 50%);
+    grid-column: 7 / 11;
+    grid-row: 6 / 10;
   }
 
   &__spock {
-    top: 40%;
-    left: 0;
-    transform: translate(-50%, -50%);
+    grid-column: 2 / 6;
+    grid-row: 3 / 7;
   }
 
   &__lizard {
-    bottom: 0;
-    left: 20%;
-    transform: translate(-50%, 50%);
+    grid-column: 3 / 7;
+    grid-row: 6 / 10;
   }
 }

@@ -27,39 +27,37 @@ const Board = ({ playMode, selectedCard, onSelectCard }) => {
           onClick={onPlayAgainHandler}
         />
       ) : (
-        <>
-          <div className={`board__selection ${playMode}`}>
-            {playMode === "original" ? (
-              <>
-                <figure>
-                  <Triangle />
-                </figure>
-                {originalPlayMode.map((item) => (
-                  <Card
-                    key={item}
-                    customClass={`${playMode}__${item}`}
-                    option={item}
-                    onClick={onSelectCardHandler}
-                  />
-                ))}
-              </>
-            ) : (
-              <>
-                <figure>
-                  <Pentagon />
-                </figure>
-                {bonusPlayMode.map((item) => (
-                  <Card
-                    key={item}
-                    customClass={`${playMode}__${item}`}
-                    option={item}
-                    onClick={onSelectCardHandler}
-                  />
-                ))}
-              </>
-            )}
-          </div>
-        </>
+        <div className={`board__selection ${playMode}`}>
+          {playMode === "original" ? (
+            <>
+              <figure className="triangle">
+                <Triangle />
+              </figure>
+              {originalPlayMode.map((item) => (
+                <Card
+                  key={item}
+                  customClass={`${playMode}__${item}`}
+                  option={item}
+                  onClick={onSelectCardHandler}
+                />
+              ))}
+            </>
+          ) : (
+            <>
+              <figure className="pentagon">
+                <Pentagon />
+              </figure>
+              {bonusPlayMode.map((item) => (
+                <Card
+                  key={item}
+                  customClass={`${playMode}__${item}`}
+                  option={item}
+                  onClick={onSelectCardHandler}
+                />
+              ))}
+            </>
+          )}
+        </div>
       )}
     </>
   );

@@ -21,21 +21,13 @@ body {
   font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
+  height: 100vh;
   color: $color-white;
-
-  // @media only screen and (max-width: $bp-mobile) {
-  //   font-size: 14px;
-  // }
 }
 
 p {
   font-size: 15px;
   padding-top: 3px;
-
-  // @media only screen and (max-width: $bp-mobile) {
-  //   font-size: 14px;
-  // }
 }
 
 span {
