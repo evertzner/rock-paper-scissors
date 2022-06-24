@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useDispatch } from "react-redux";
 
 import { gameValuesActions } from "../../store/game-values-slice";
@@ -27,11 +27,15 @@ const CardSelection = ({ selectedCard, playMode, onClick }) => {
   const [result, setResult] = useState("");
   const [whowins, setWhowins] = useState("");
 
-  const onPlayAgain = () => {
-    onClick();
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      const numberOfOptions = playMode === "original" ? 3 : 5;
+      const rndInt = Math.floor(Math.random() * numberOfOptions) + 1;
+      setOpponent(options[rndInt - 1]);
+    }, 1000);
+  }, [playMode]);
 
-  const analyzeGame = () => {
+  const analyzeGame = useCallback(() => {
     if (selectedCard === opponent) {
       setResult("draw");
     } else {
@@ -49,9 +53,9 @@ const CardSelection = ({ selectedCard, playMode, onClick }) => {
           .map(({ winner }) => winner)
       );
     }
-  };
+  }, [selectedCard, opponent]);
 
-  const showResults = () => {
+  const showResults = useCallback(() => {
     if (result !== "draw") {
       if (selectedCard === result[0]) {
         setWhowins("player");
@@ -65,6 +69,18 @@ const CardSelection = ({ selectedCard, playMode, onClick }) => {
     } else {
       setWhowins("draw");
     }
+  }, [dispatch, opponent, result, selectedCard]);
+
+  useEffect(() => {
+    if (opponent !== "") analyzeGame();
+  }, [opponent, analyzeGame]);
+
+  useEffect(() => {
+    if (result !== "") showResults();
+  }, [result, showResults]);
+
+  const onPlayAgain = () => {
+    onClick();
   };
 
   const resultSwitch = () => {
@@ -79,22 +95,6 @@ const CardSelection = ({ selectedCard, playMode, onClick }) => {
         return <></>;
     }
   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      const numberOfOptions = playMode === "original" ? 3 : 5;
-      const rndInt = Math.floor(Math.random() * numberOfOptions) + 1;
-      setOpponent(options[rndInt - 1]);
-    }, 1000);
-  }, []);
-
-  useEffect(() => {
-    if (opponent !== "") analyzeGame();
-  }, [opponent]);
-
-  useEffect(() => {
-    if (result !== "") showResults();
-  }, [result]);
 
   return (
     <div className={`card-selection-container ${result && "played"}`}>

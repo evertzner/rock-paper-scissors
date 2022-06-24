@@ -6,24 +6,24 @@ import { ReactComponent as Lizard } from "../../assets/icon-lizard.svg";
 
 import "./card.styles.scss";
 
-const Card = ({ customClass, option, onClick }) => {
-  const renderSwitch = (option) => {
-    switch (option) {
-      case "paper":
-        return <Paper />;
-      case "scissors":
-        return <Scissors />;
-      case "rock":
-        return <Rock />;
-      case "spock":
-        return <Spock />;
-      case "lizard":
-        return <Lizard />;
-      default:
-        return <></>;
-    }
-  };
+const renderSwitch = (option) => {
+  switch (option) {
+    case "paper":
+      return <Paper />;
+    case "scissors":
+      return <Scissors />;
+    case "rock":
+      return <Rock />;
+    case "spock":
+      return <Spock />;
+    case "lizard":
+      return <Lizard />;
+    default:
+      return <></>;
+  }
+};
 
+const Card = ({ customClass, option, onClick }) => {
   const onSelectCard = () => {
     onClick(option);
   };
