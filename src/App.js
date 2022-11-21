@@ -13,44 +13,38 @@ import { ReactComponent as ImageRulesBonus } from "./assets/image-rules-bonus.sv
 import "./App.styles.scss";
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [playMode, setPlayMode] = useState("original");
-  const [selectedCard, setSelectedCard] = useState("");
-  const score = useSelector((state) => state.gamevalues.score);
+	const [isOpen, setIsOpen] = useState(false);
+	const [playMode, setPlayMode] = useState("original");
+	const [selectedCard, setSelectedCard] = useState("");
+	const score = useSelector((state) => state.gamevalues.score);
 
-  const selectCardHandle = (option) => {
-    setSelectedCard(option);
-  };
+	const selectCardHandle = (option) => {
+		setSelectedCard(option);
+	};
 
-  const rulesDialogHandler = () => {
-    setIsOpen(true);
-  };
+	const rulesDialogHandler = () => {
+		setIsOpen(true);
+	};
 
-  const playModeHandler = () => {
-    setPlayMode(playMode === "original" ? "bonus" : "original");
-  };
+	const playModeHandler = () => {
+		setPlayMode(playMode === "original" ? "bonus" : "original");
+	};
 
-  return (
-    <>
-      <div className="app">
-        <Header playMode={playMode} score={score} />
-        <Board
-          playMode={playMode}
-          selectedCard={selectedCard}
-          onSelectCard={selectCardHandle}
-        />
-        <div className={`buttons ${selectedCard && "one-child"}`}>
-          {!selectedCard && (
-            <PlayMode playMode={playMode} onClick={playModeHandler} />
-          )}
-          <Rules onClick={rulesDialogHandler} />
-        </div>
-      </div>
-      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        {playMode === "original" ? <ImageRules /> : <ImageRulesBonus />}
-      </Modal>
-    </>
-  );
+	return (
+		<>
+			<div className="app">
+				<Header playMode={playMode} score={score} />
+				<Board playMode={playMode} selectedCard={selectedCard} onSelectCard={selectCardHandle} />
+				<div className={`buttons ${selectedCard && "one-child"}`}>
+					{!selectedCard && <PlayMode playMode={playMode} onClick={playModeHandler} />}
+					<Rules onClick={rulesDialogHandler} />
+				</div>
+			</div>
+			<Modal open={isOpen} onClose={() => setIsOpen(false)}>
+				{playMode === "original" ? <ImageRules /> : <ImageRulesBonus />}
+			</Modal>
+		</>
+	);
 };
 
 export default App;

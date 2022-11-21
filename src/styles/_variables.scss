@@ -3,47 +3,27 @@
 // Primary
 
 // Scissors Gradient
-$color-scissors-gradient: linear-gradient(
-  to bottom,
-  hsl(40, 84%, 53%),
-  hsl(39, 89%, 49%)
-);
+$color-scissors-gradient: linear-gradient(to bottom, hsl(40, 84%, 53%), hsl(39, 89%, 49%));
 
 $color-scissors-shadow: hsl(39, 100%, 39%);
 
 // Paper Gradient
-$color-paper-gradient: linear-gradient(
-  to bottom,
-  hsl(230, 89%, 65%),
-  hsl(230, 89%, 62%)
-);
+$color-paper-gradient: linear-gradient(to bottom, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
 
 $color-paper-shadow: hsl(230, 86%, 54%);
 
 // Rock Gradient
-$color-rock-gradient: linear-gradient(
-  to bottom,
-  hsl(349, 70%, 56%),
-  hsl(349, 71%, 52%)
-);
+$color-rock-gradient: linear-gradient(to bottom, hsl(349, 70%, 56%), hsl(349, 71%, 52%));
 
 $color-rock-shadow: hsl(349, 83%, 37%);
 
 // Lizard Gradient
-$color-lizard-gradient: linear-gradient(
-  to bottom,
-  hsl(261, 72%, 63%),
-  hsl(261, 73%, 60%)
-);
+$color-lizard-gradient: linear-gradient(to bottom, hsl(261, 72%, 63%), hsl(261, 73%, 60%));
 
 $color-lizard-shadow: hsl(261, 55%, 51%);
 
 // Spock Gradient
-$color-spock-gradient: linear-gradient(
-  to bottom,
-  hsl(189, 58%, 57%),
-  hsl(189, 59%, 53%)
-);
+$color-spock-gradient: linear-gradient(to bottom, hsl(189, 58%, 57%), hsl(189, 59%, 53%));
 
 $color-spock-shadow: hsl(189, 63%, 44%);
 
@@ -59,11 +39,7 @@ $color-modal-backdrop: rgba(0, 0, 0, 0.7);
 
 // Background
 
-$background-color: radial-gradient(
-  ellipse at top,
-  hsl(214, 47%, 23%),
-  hsl(237, 49%, 15%)
-);
+$background-color: radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 
 $background-color-skeleton: hsl(222, 45%, 18%);
 

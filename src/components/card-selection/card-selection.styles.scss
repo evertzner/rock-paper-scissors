@@ -1,272 +1,272 @@
 @import "../../styles/variables";
 
 .card-selection-container {
-  position: relative;
-  width: min(45rem, 98%);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 3fr;
-  align-items: center;
-  height: 60%;
-  transition: all 200ms linear;
+	position: relative;
+	width: min(45rem, 98%);
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr 3fr;
+	align-items: center;
+	height: 60%;
+	transition: all 200ms linear;
 
-  @media only screen and (max-width: $bp-medium) {
-    height: 50%;
-  }
+	@media only screen and (max-width: $bp-medium) {
+		height: 50%;
+	}
 
-  @media only screen and (max-width: $bp-small) {
-    height: 40%;
-  }
+	@media only screen and (max-width: $bp-small) {
+		height: 40%;
+	}
 
-  @media only screen and (max-width: $bp-mobile) {
-    height: 60%;
-    grid-template-rows: 1fr max-content 1fr;
-  }
+	@media only screen and (max-width: $bp-mobile) {
+		height: 60%;
+		grid-template-rows: 1fr max-content 1fr;
+	}
 
-  & > * {
-    justify-self: center;
-  }
+	& > * {
+		justify-self: center;
+	}
 
-  p {
-    font-size: 1.8rem;
-    letter-spacing: 3px;
-    text-align: center;
-    transition: font-size 200ms linear;
+	p {
+		font-size: 1.8rem;
+		letter-spacing: 3px;
+		text-align: center;
+		transition: font-size 200ms linear;
 
-    @media only screen and (max-width: $bp-medium) {
-      font-size: 1.4rem;
-    }
+		@media only screen and (max-width: $bp-medium) {
+			font-size: 1.4rem;
+		}
 
-    @media only screen and (max-width: $bp-mobile) {
-      font-size: 1rem;
-      letter-spacing: 2px;
-    }
-  }
+		@media only screen and (max-width: $bp-mobile) {
+			font-size: 1rem;
+			letter-spacing: 2px;
+		}
+	}
 
-  .player-text {
-    grid-column: 1/2;
-    grid-row: 1/2;
+	.player-text {
+		grid-column: 1/2;
+		grid-row: 1/2;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 1/2;
-      grid-row: 2/3;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+	}
 
-  .player-card {
-    position: relative;
-    grid-column: 1/2;
-    grid-row: 2/3;
+	.player-card {
+		position: relative;
+		grid-column: 1/2;
+		grid-row: 2/3;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 1/2;
-      grid-row: 1/2;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 1/2;
+			grid-row: 1/2;
+		}
+	}
 
-  .player-card,
-  .opponent-card {
-    width: min(90%, 15rem);
+	.player-card,
+	.opponent-card {
+		width: min(90%, 15rem);
 
-    & > * {
-      cursor: default;
-    }
-  }
+		& > * {
+			cursor: default;
+		}
+	}
 
-  .opponent-text {
-    grid-column: 2/3;
-    grid-row: 1/2;
+	.opponent-text {
+		grid-column: 2/3;
+		grid-row: 1/2;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 2/3;
-      grid-row: 2/3;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 2/3;
+			grid-row: 2/3;
+		}
+	}
 
-  .opponent-card,
-  .opponent-card-skeleton {
-    position: relative;
-    grid-column: 2/3;
-    grid-row: 2/3;
+	.opponent-card,
+	.opponent-card-skeleton {
+		position: relative;
+		grid-column: 2/3;
+		grid-row: 2/3;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 2/3;
-      grid-row: 1/2;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 2/3;
+			grid-row: 1/2;
+		}
+	}
 
-  .opponent-card {
-    animation: opponentAppear 300ms ease-in;
-  }
+	.opponent-card {
+		animation: opponentAppear 300ms ease-in;
+	}
 
-  .opponent-card-skeleton {
-    background-color: $background-color-skeleton;
-    width: 60%;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-  }
+	.opponent-card-skeleton {
+		background-color: $background-color-skeleton;
+		width: 60%;
+		aspect-ratio: 1/1;
+		border-radius: 100%;
+	}
 
-  .winner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: -5%;
-    left: 0;
-    right: 0;
-    background-color: $color-pulse;
-    border-radius: 100%;
-    z-index: -1;
-    animation: pulse 1s infinite ease-in;
-  }
+	.winner::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: -5%;
+		left: 0;
+		right: 0;
+		background-color: $color-pulse;
+		border-radius: 100%;
+		z-index: -1;
+		animation: pulse 1s infinite ease-in;
+	}
 
-  .card-container {
-    @media only screen and(max-width: $bp-mobile) {
-      width: 80%;
-    }
-  }
+	.card-container {
+		@media only screen and(max-width: $bp-mobile) {
+			width: 80%;
+		}
+	}
 }
 
 .played {
-  width: min(68rem, 98%);
-  grid-template-columns: 1fr 0.7fr 1fr;
+	width: min(68rem, 98%);
+	grid-template-columns: 1fr 0.7fr 1fr;
 
-  @media only screen and(max-width: $bp-mobile) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr max-content 1fr;
-    height: 60%;
-  }
+	@media only screen and(max-width: $bp-mobile) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr max-content 1fr;
+		height: 60%;
+	}
 
-  .player-text {
-    grid-column: 1/2;
-    grid-row: 1/2;
+	.player-text {
+		grid-column: 1/2;
+		grid-row: 1/2;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 1/2;
-      grid-row: 2/3;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+	}
 
-  .player-card {
-    position: relative;
-    grid-column: 1/2;
-    grid-row: 2/3;
+	.player-card {
+		position: relative;
+		grid-column: 1/2;
+		grid-row: 2/3;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 1/2;
-      grid-row: 1/2;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 1/2;
+			grid-row: 1/2;
+		}
+	}
 
-  .opponent-text {
-    grid-column: 3/4;
+	.opponent-text {
+		grid-column: 3/4;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 2/3;
-      grid-row: 2/3;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 2/3;
+			grid-row: 2/3;
+		}
+	}
 
-  .opponent-card,
-  .opponent-card-skeleton {
-    grid-column: 3/4;
+	.opponent-card,
+	.opponent-card-skeleton {
+		grid-column: 3/4;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 2/3;
-      grid-row: 1/2;
-    }
-  }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 2/3;
+			grid-row: 1/2;
+		}
+	}
 
-  .game-result {
-    animation: gameResultAppear 500ms linear 300ms forwards;
-    grid-column: 2/3;
-    grid-row: 2/3;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    opacity: 0;
+	.game-result {
+		animation: gameResultAppear 500ms linear 300ms forwards;
+		grid-column: 2/3;
+		grid-row: 2/3;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		opacity: 0;
 
-    @media only screen and(max-width: $bp-mobile) {
-      grid-column: 1/3;
-      grid-row: 3/4;
-    }
+		@media only screen and(max-width: $bp-mobile) {
+			grid-column: 1/3;
+			grid-row: 3/4;
+		}
 
-    &__text {
-      font-size: 3em;
-      letter-spacing: unset;
+		&__text {
+			font-size: 3em;
+			letter-spacing: unset;
 
-      @media only screen and (max-width: $bp-medium) {
-        font-size: 2.6rem;
-      }
+			@media only screen and (max-width: $bp-medium) {
+				font-size: 2.6rem;
+			}
 
-      @media only screen and (max-width: $bp-small) {
-        font-size: 1.6rem;
-      }
+			@media only screen and (max-width: $bp-small) {
+				font-size: 1.6rem;
+			}
 
-      @media only screen and (max-width: $bp-mobile) {
-        font-size: 3.5rem;
-      }
-    }
+			@media only screen and (max-width: $bp-mobile) {
+				font-size: 3.5rem;
+			}
+		}
 
-    &__play-again-button {
-      font-size: 0.8em;
-      background-color: $color-white;
-      color: $background-color-skeleton;
-      font-weight: 700;
-      padding: 0.7rem 0.7rem;
-      text-align: center;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 100ms linear;
-      letter-spacing: 1px;
+		&__play-again-button {
+			font-size: 0.8em;
+			background-color: $color-white;
+			color: $background-color-skeleton;
+			font-weight: 700;
+			padding: 0.7rem 0.7rem;
+			text-align: center;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 100ms linear;
+			letter-spacing: 1px;
 
-      @media only screen and (max-width: $bp-mobile) {
-        font-size: 1em;
-      }
+			@media only screen and (max-width: $bp-mobile) {
+				font-size: 1em;
+			}
 
-      &:hover {
-        color: $color-button-play-again;
-      }
-    }
-  }
+			&:hover {
+				color: $color-button-play-again;
+			}
+		}
+	}
 }
 
 @keyframes opponentAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 @keyframes gameResultAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  80% {
-    opacity: 1;
-    transform: scale(1.3);
-  }
-  90% {
-    opacity: 1;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	80% {
+		opacity: 1;
+		transform: scale(1.3);
+	}
+	90% {
+		opacity: 1;
+		transform: scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 @keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.75;
-  }
-  100% {
-    transform: scale(1.8);
-    opacity: 0;
-  }
+	0% {
+		transform: scale(0.95);
+		opacity: 0.75;
+	}
+	100% {
+		transform: scale(1.8);
+		opacity: 0;
+	}
 }

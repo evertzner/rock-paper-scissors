@@ -1,27 +1,27 @@
 @import "variables";
 
 .btn-outline {
-  width: max-content;
-  font-weight: 600;
-  letter-spacing: 3px;
-  font-size: 14px;
-  border: 1px solid $color-white;
-  padding: 0.5rem 2rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.1s linear;
-  margin: 0 1rem 0 1rem;
-  text-transform: uppercase;
+	width: max-content;
+	font-weight: 600;
+	letter-spacing: 3px;
+	font-size: 14px;
+	border: 1px solid $color-white;
+	padding: 0.5rem 2rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.1s linear;
+	margin: 0 1rem 0 1rem;
+	text-transform: uppercase;
 
-  @media only screen and (max-width: $bp-xsmall) {
-    font-size: 10px;
-  }
+	@media only screen and (max-width: $bp-xsmall) {
+		font-size: 10px;
+	}
 
-  @media only screen and (max-width: $bp-mobile) {
-    font-size: 15px;
-  }
+	@media only screen and (max-width: $bp-mobile) {
+		font-size: 15px;
+	}
 
-  &:hover {
-    box-shadow: 0 0 5px 0.1px $color-white;
-  }
+	&:hover {
+		box-shadow: 0 0 5px 0.1px $color-white;
+	}
 }

@@ -1,94 +1,94 @@
 @import "../../styles/variables";
 
 .card-container {
-  position: relative;
-  width: 70%;
-  isolation: isolate;
+	position: relative;
+	width: 70%;
+	isolation: isolate;
 
-  .outer-circle {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+	.outer-circle {
+		width: 100%;
+		aspect-ratio: 1/1;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      aspect-ratio: 1/1;
-      border-radius: 100%;
-      transform: translateY(4%);
-      z-index: -1;
-    }
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			aspect-ratio: 1/1;
+			border-radius: 100%;
+			transform: translateY(4%);
+			z-index: -1;
+		}
 
-    &::after {
-      content: "";
-      background-color: $color-white-shadow;
-      width: 75%;
-      aspect-ratio: 1/1;
-      border-radius: 100%;
-      position: absolute;
-      transform: translateY(-1%);
-      z-index: 1;
-    }
+		&::after {
+			content: "";
+			background-color: $color-white-shadow;
+			width: 75%;
+			aspect-ratio: 1/1;
+			border-radius: 100%;
+			position: absolute;
+			transform: translateY(-1%);
+			z-index: 1;
+		}
 
-    &[data-option="paper"] {
-      background-image: $color-paper-gradient;
-    }
+		&[data-option="paper"] {
+			background-image: $color-paper-gradient;
+		}
 
-    &[data-option="rock"] {
-      background-image: $color-rock-gradient;
-    }
+		&[data-option="rock"] {
+			background-image: $color-rock-gradient;
+		}
 
-    &[data-option="scissors"] {
-      background-image: $color-scissors-gradient;
-    }
+		&[data-option="scissors"] {
+			background-image: $color-scissors-gradient;
+		}
 
-    &[data-option="spock"] {
-      background-image: $color-spock-gradient;
-    }
+		&[data-option="spock"] {
+			background-image: $color-spock-gradient;
+		}
 
-    &[data-option="lizard"] {
-      background-image: $color-lizard-gradient;
-    }
+		&[data-option="lizard"] {
+			background-image: $color-lizard-gradient;
+		}
 
-    &[data-option="paper"]::before {
-      background-color: $color-paper-shadow;
-    }
+		&[data-option="paper"]::before {
+			background-color: $color-paper-shadow;
+		}
 
-    &[data-option="rock"]::before {
-      background-color: $color-rock-shadow;
-    }
+		&[data-option="rock"]::before {
+			background-color: $color-rock-shadow;
+		}
 
-    &[data-option="scissors"]::before {
-      background-color: $color-scissors-shadow;
-    }
+		&[data-option="scissors"]::before {
+			background-color: $color-scissors-shadow;
+		}
 
-    &[data-option="spock"]::before {
-      background-color: $color-spock-shadow;
-    }
+		&[data-option="spock"]::before {
+			background-color: $color-spock-shadow;
+		}
 
-    &[data-option="lizard"]::before {
-      background-color: $color-lizard-shadow;
-    }
-  }
+		&[data-option="lizard"]::before {
+			background-color: $color-lizard-shadow;
+		}
+	}
 
-  .inner-circle {
-    background-color: $color-white;
-    width: 75%;
-    aspect-ratio: 1/1;
-    border-radius: 100%;
-    z-index: 2;
-    transform: translateY(4%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+	.inner-circle {
+		background-color: $color-white;
+		width: 75%;
+		aspect-ratio: 1/1;
+		border-radius: 100%;
+		z-index: 2;
+		transform: translateY(4%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-  &__figure {
-    height: 50%;
-  }
+	&__figure {
+		height: 50%;
+	}
 }

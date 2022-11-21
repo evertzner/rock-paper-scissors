@@ -7,43 +7,39 @@ import { ReactComponent as Lizard } from "../../assets/icon-lizard.svg";
 import "./card.styles.scss";
 
 const renderSwitch = (option) => {
-  switch (option) {
-    case "paper":
-      return <Paper />;
-    case "scissors":
-      return <Scissors />;
-    case "rock":
-      return <Rock />;
-    case "spock":
-      return <Spock />;
-    case "lizard":
-      return <Lizard />;
-    default:
-      return <></>;
-  }
+	switch (option) {
+		case "paper":
+			return <Paper />;
+		case "scissors":
+			return <Scissors />;
+		case "rock":
+			return <Rock />;
+		case "spock":
+			return <Spock />;
+		case "lizard":
+			return <Lizard />;
+		default:
+			return <></>;
+	}
 };
 
 const Card = ({ customClass, option, onClick }) => {
-  const onSelectCard = () => {
-    onClick(option);
-  };
+	const onSelectCard = () => {
+		onClick(option);
+	};
 
-  return (
-    <div
-      className={
-        customClass ? `card-container ${customClass}` : "card-container"
-      }
-      onClick={onSelectCard}
-    >
-      <div className="outer-circle" data-option={option}>
-        <div className="inner-circle">
-          <figure className="card-container__figure">
-            {renderSwitch(option)}
-          </figure>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div
+			className={customClass ? `card-container ${customClass}` : "card-container"}
+			onClick={onSelectCard}
+		>
+			<div className="outer-circle" data-option={option}>
+				<div className="inner-circle">
+					<figure className="card-container__figure">{renderSwitch(option)}</figure>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Card;
