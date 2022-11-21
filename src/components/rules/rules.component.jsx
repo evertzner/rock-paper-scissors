@@ -1,3 +1,4 @@
+import React from "react";
 import "./rules.styles.scss";
 
 const Rules = ({ onClick }) => {

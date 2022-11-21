@@ -1,3 +1,4 @@
+import React from "react";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { ReactComponent as LogoBonus } from "../../assets/logo-bonus.svg";
 

@@ -1,3 +1,4 @@
+import React from "react";
 import "./play-mode.styles.scss";
 
 const PlayMode = ({ playMode, onClick }) => {

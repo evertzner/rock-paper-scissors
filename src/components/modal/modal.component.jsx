@@ -1,3 +1,4 @@
+import React from "react";
 import ReactDom from "react-dom";
 import { ReactComponent as Close } from "../../assets/icon-close.svg";
 
